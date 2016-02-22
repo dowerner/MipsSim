@@ -1,0 +1,29 @@
+start:	j foo
+
+swap:		addi $sp,$sp,-8
+		sw $fp,4($sp)
+		sw $s0,0($sp)
+		addi $fp,$sp,4
+		add $t6,$a0,$t6
+		lw $t7,0($t6)
+		lw $s0,4($t6)
+		sw $t7,4($t6)
+		sw $s0,0($t6)
+		addi $sp,$fp,-4
+		lw $fp,4($sp)
+		lw $s0,0($sp)
+		addi $sp,$sp,8
+		jr $ra
+		
+foo1:	addi $sp,$sp,-8
+	addi $t0,$zero,7
+	sw $t0,4($sp)
+	addi $t0,$zero,1
+	sw $t0,8($sp)
+	addi $a0,$sp,4
+	jal swap
+	j end
+	
+foo:	j foo1
+
+end:

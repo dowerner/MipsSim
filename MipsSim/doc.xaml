@@ -1,0 +1,200 @@
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="0">add rd, rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="0" TextWrapping="Wrap">
+	Add rs and rt and store the result in rd (with overflow).
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="1">addu rd, rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="1" TextWrapping="Wrap">
+	Add rs and rt and store the result in rd  (no overflow)
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="2">and rd, rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="2" TextWrapping="Wrap">
+	Does a bitwise and with rs and rt and stores the result in rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="3">div rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="3" TextWrapping="Wrap">
+	Divides rs by rt and stores the quotient in $lo and the remainder in $hi.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="4">divu rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="4" TextWrapping="Wrap">
+	Divides rs by rt and stores the quotient in $lo and the remainder in $hi.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="5">jalr rd, rs</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="5" TextWrapping="Wrap">
+	Saves the instruction address of the following instruction to the $ra register and then jumps to the address saved in rs.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="6">jr rs</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="6" TextWrapping="Wrap">
+	Jumps to the address saved in rs.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="7">mfhi rd</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="7" TextWrapping="Wrap">
+	Moves word from $hi to rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="8">mflo rd</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="8" TextWrapping="Wrap">
+	Moves word from $lo to rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="9">mthi rs</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="9" TextWrapping="Wrap">
+	Moves rs to $hi.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="10">mtlo rs</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="10" TextWrapping="Wrap">
+	Moves rs to $lo
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="11">mult rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="11" TextWrapping="Wrap">
+	Multiplies rs with rt and stores the (possible 64bit) result $lo (first 32bit) and $hi (last 32bit).
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="12">multu rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="12" TextWrapping="Wrap">
+	Multiplies rs with rt and stores the (possible 64bit) result $lo (first 32bit) and $hi (last 32bit).
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="13">nor rd, rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="13" TextWrapping="Wrap">
+	Does perform a bitwise nor operation of rs and rt and stores the result in rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="14">or rd, rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="14" TextWrapping="Wrap">
+	Does perform a bitwise or operation of rs and rt and stores the result in rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="15">sll rd, rt, amount</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="15" TextWrapping="Wrap">
+	Shifts the word in rt bitwise to the left by a given amount and stores the result in rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="16">sllv rd, rt, rs</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="16" TextWrapping="Wrap">
+	Shifts the word in rt bitwise to the left by the value of rs and stores the result in rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="17">slt rd, rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="17" TextWrapping="Wrap">
+	Sets rd to 1 if rs is smaller than rt.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="18">sltu rd, rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="18" TextWrapping="Wrap">
+	Sets rd to 1 if rs is smaller than rt.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="19">sra rd, rt, amount</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="19" TextWrapping="Wrap">
+	Shifts the word in rt bitwise to the right by a given amount of rs and stores the result in rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="20">srav rd, rt, rs</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="20" TextWrapping="Wrap">
+	Shifts the word in rt bitwise to the right by the value of rs and stores the result in rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="21">srl rd, rt, amount</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="21" TextWrapping="Wrap">
+	Shifts the word in rt bitwise to the right by a given amount of rs and stores the result in rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="22">srlv rd, rt, rs</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="22" TextWrapping="Wrap">
+	Shifts the word in rt bitwise to the right by the value of rs and stores the result in rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="23">sub rd, rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="23" TextWrapping="Wrap">
+	Subtract rt from rs and store the result in rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="24">subu rd, rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="24" TextWrapping="Wrap">
+	Subtract rt from rs and store the result in rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="25">xor rd, rs, rt</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="25" TextWrapping="Wrap">
+	Does perform a bitwise xor operation on rs and rt and stores the result in rd.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="26">addi rt, rs, immediate</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="26" TextWrapping="Wrap">
+	Adds a constant value to rs and stores the result in rt (with overflow).
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="27">addiu rt, rs, immediate</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="27" TextWrapping="Wrap">
+	Adds a constant value to rs and stores the result in rt (no overflow).
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="28">andi rt, rs, immediate</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="28" TextWrapping="Wrap">
+	Does a bitwise and operation on rs and a constant value and stores the result in rt.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="29">beq rs, rt, label</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="29" TextWrapping="Wrap">
+	Branches if the values stored in rs and rt are equal. The target is given by the label.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="30">bgez rs, label</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="30" TextWrapping="Wrap">
+	Branches if rs greater or equal zero. The target is given by the label.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="31">bgtz rs, label</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="31" TextWrapping="Wrap">
+	Branches if rs is greater than zero. The target is given by the label.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="32">blez rs, label</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="32" TextWrapping="Wrap">
+	Branches if rs is less or equal than zero. The target is given by the label.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="33">bltz rs, label</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="33" TextWrapping="Wrap">
+	Branches if rs is less than zero. The target is given by the label.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="34">bne rs, rt, label</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="34" TextWrapping="Wrap">
+	Branches if rs and rt are not equal. The target is given by the label.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="35">lb rt, immediate(rs)</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="35" TextWrapping="Wrap">
+	Load byte from memory that is stored at the address rs with a given offset.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="36">lbu rt, immediate(rs)</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="36" TextWrapping="Wrap">
+	Load byte from memory that is stored at the address rs with a given offset.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="37">lh rt, immediate(rs)</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="37" TextWrapping="Wrap">
+	Load halfword from memory that is stored at the address rs with a given offset.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="38">lhu rt, immediate(rs)</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="38" TextWrapping="Wrap">
+	Load halfword from memory that is stored at the address rs with a given offset.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="39">lui rt, immediate</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="39" TextWrapping="Wrap">
+	Stores the 16bit immidiate value in the upper region of rt including the MSB.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="40">lw rt, immediate(rs)</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="40" TextWrapping="Wrap">
+	Load word from memory that is stored at the address rs with a given offset.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="41">ori rt, rs, immediate</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="41" TextWrapping="Wrap">
+	Does a bitwise or operation on rs and a constant and stores the result in rt.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="42">sb rt, immediate(rs)</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="42" TextWrapping="Wrap">
+	Store byte in memory at the address rs with a given offset.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="43">slti rt, rs, immediate</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="43" TextWrapping="Wrap">
+	Set rt to 1 if rs is smaller than a given constant.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="44">sltiu rt, rs, immediate</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="44" TextWrapping="Wrap">
+	Set rt to 1 if rs is smaller than a given constant.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="45">sh rt, immediate(rs)</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="45" TextWrapping="Wrap">
+	Store halfword in memory at the address rs with a given offset.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="46">sw rt, immediate(rs)</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="46" TextWrapping="Wrap">
+	Store word in memory at the address rs with a given offset.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="47">xori rt, rs, immediate</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="47" TextWrapping="Wrap">
+	Does a bitwise xor on rs and a given constant and stores the result in rt.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="48">j label</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="48" TextWrapping="Wrap">
+	Jumps to a label.
+</TextBlock>
+<TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="49">jal label</TextBlock>
+<TextBlock VerticalAlignment="Center"  Grid.Column="1" Grid.Row="49" TextWrapping="Wrap">
+	Saves the instruction address of the following instruction to the $ra register and then jumps to a label.
+</TextBlock>

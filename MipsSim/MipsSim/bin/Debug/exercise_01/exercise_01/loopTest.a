@@ -1,0 +1,8 @@
+addi $t0, $zero, 20
+addi $t1, $zero, 5
+addi $t3, $zero, 100
+
+loop:	add $t0,$t0,$t1
+	beq $t0,$t3,end
+	j loop
+end:

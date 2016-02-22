@@ -1,0 +1,73 @@
+main:	jal fill
+	addi $t0,$zero,0
+	
+outer:	sll $t4,$t0,2
+	addi $t1,$t0,1
+inner:	sll $t5,$t1,2
+
+
+swap:	addi $sp,$sp,-8
+	sw $fp,4($sp)
+	sw $s0,0($sp)
+	addi $fp,$sp,4
+	add $t6,$a0,$t6
+	lw $t7,0($t6)
+	lw $s0,4($t6)
+	sw $t7,4($t6)
+	sw $s0,0($t6)
+	addi $sp,$fp,-4
+	lw $fp,4($sp)
+	lw $s0,0($sp)
+	addi $sp,$sp,8
+	jr $ra
+	
+fill:	addi $s0,$ra,0
+	addi $sp,$sp,-40
+	
+	addi $a0,$zero,0
+	addi $a1,$zero,1
+	jal insert
+	
+	addi $a0,$zero,1
+	addi $a1,$zero,6
+	jal insert
+	
+	addi $a0,$zero,2
+	addi $a1,$zero,9
+	jal insert
+	
+	addi $a0,$zero,3
+	addi $a1,$zero,8
+	jal insert
+	
+	addi $a0,$zero,4
+	addi $a1,$zero,2
+	jal insert
+	
+	addi $a0,$zero,5
+	addi $a1,$zero,3
+	jal insert
+	
+	addi $a0,$zero,6
+	addi $a1,$zero,8
+	jal insert
+	
+	addi $a0,$zero,7
+	addi $a1,$zero,8
+	jal insert
+	
+	addi $a0,$zero,8
+	addi $a1,$zero,1
+	jal insert
+	
+	addi $a0,$zero,9
+	addi $a1,$zero,3
+	jal insert
+	
+	addi $ra,$s0,0
+	jr $ra
+	
+insert:	add $t0,$sp,$a0
+	sw $a1,0($t0)
+	jr $ra
+	

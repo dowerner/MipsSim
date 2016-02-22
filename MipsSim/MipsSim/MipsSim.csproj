@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DBB9C798-F100-4DFA-B8EC-0CF6C022C33F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MipsSim</RootNamespace>
+    <AssemblyName>MipsSim</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\FileDirector.cs" />
+    <Compile Include="Model\Mips\AssemblerInstructions.cs" />
+    <Compile Include="Model\Mips\Compiler.cs" />
+    <Compile Include="Model\Mips\Debugger.cs" />
+    <Compile Include="Model\Mips\DebuggerRelationship.cs" />
+    <Compile Include="Model\Mips\Extensions.cs" />
+    <Compile Include="Model\Mips\Hardware\Cpu.cs" />
+    <Compile Include="Model\Mips\Hardware\DFLipFlop.cs" />
+    <Compile Include="Model\Mips\Hardware\InstructionExecute.cs" />
+    <Compile Include="Model\Mips\Hardware\Memory.cs" />
+    <Compile Include="Model\Mips\Hardware\Register.cs" />
+    <Compile Include="Model\Mips\InstructionType.cs" />
+    <Compile Include="Model\Mips\JumpMark.cs" />
+    <Compile Include="Model\Mips\ProgramMode.cs" />
+    <Compile Include="Model\Strings.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\Commands\AboutCommand.cs" />
+    <Compile Include="ViewModel\Commands\BaseCommand.cs" />
+    <Compile Include="ViewModel\Commands\LoadCpuCommand.cs" />
+    <Compile Include="ViewModel\Commands\SaveCpuCommand.cs" />
+    <Compile Include="ViewModel\Commands\LoadMemoryCommand.cs" />
+    <Compile Include="ViewModel\Commands\NewFileCommand.cs" />
+    <Compile Include="ViewModel\Commands\OpenHelpCommand.cs" />
+    <Compile Include="ViewModel\Commands\OpenSettingsCommand.cs" />
+    <Compile Include="ViewModel\Commands\SaveMemoryCommand.cs" />
+    <Compile Include="ViewModel\Commands\SettingsSaveCloseCommand.cs" />
+    <Compile Include="ViewModel\DataEditViewModel.cs" />
+    <Compile Include="ViewModel\InstructionEditViewModel.cs" />
+    <Compile Include="ViewModel\MemoryWordEntry.cs" />
+    <Compile Include="ViewModel\RegisterEditViewModel.cs" />
+    <Compile Include="ViewModel\MemoryEditViewModel.cs" />
+    <Compile Include="ViewModel\MemoryViewEntry.cs" />
+    <Compile Include="ViewModel\MemoryViewerViewModel.cs" />
+    <Compile Include="ViewModel\Commands\OpenFileCommand.cs" />
+    <Compile Include="ViewModel\Commands\RunCommand.cs" />
+    <Compile Include="ViewModel\Commands\SaveAsCommand.cs" />
+    <Compile Include="ViewModel\Commands\SaveCommand.cs" />
+    <Compile Include="ViewModel\Commands\StepCommand.cs" />
+    <Compile Include="ViewModel\Commands\StopCommand.cs" />
+    <Compile Include="ViewModel\DataDisplayMode.cs" />
+    <Compile Include="ViewModel\MemoryViewMode.cs" />
+    <Compile Include="ViewModel\RegisterViewerViewModel.cs" />
+    <Compile Include="ViewModel\SettingsViewViewModel.cs" />
+    <Compile Include="ViewModel\SimWindowViewModel.cs" />
+    <Compile Include="View\Controls\AssemblerEditor.cs" />
+    <Compile Include="View\Controls\CodeEditor.xaml.cs">
+      <DependentUpon>CodeEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\MemoryViewer.xaml.cs">
+      <DependentUpon>MemoryViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\RegisterViewer.xaml.cs">
+      <DependentUpon>RegisterViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Converter\BoolDataModeConverter.cs" />
+    <Compile Include="View\Converter\BytesToKBytesConverter.cs" />
+    <Compile Include="View\Converter\InstructionDataModeConverter.cs" />
+    <Compile Include="View\Converter\DataModeConverter.cs" />
+    <Compile Include="View\DataEditView.xaml.cs">
+      <DependentUpon>DataEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InstructionEditView.xaml.cs">
+      <DependentUpon>InstructionEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoadingView.xaml.cs">
+      <DependentUpon>LoadingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegisterEditView.xaml.cs">
+      <DependentUpon>RegisterEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HelpView.xaml.cs">
+      <DependentUpon>HelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MemoryEditView.xaml.cs">
+      <DependentUpon>MemoryEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SimWindow.xaml.cs">
+      <DependentUpon>SimWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewDirector.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\Controls\CodeEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\MemoryViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\RegisterViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\InstructionEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\LoadingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RegisterEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\HelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MemoryEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SimWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,50 @@
+add rd, rs, rt;Add rs and rt and store the result in rd (with overflow).
+addu rd, rs, rt;Add rs and rt and store the result in rd  (no overflow)
+and rd, rs, rt;Does a bitwise and with rs and rt and stores the result in rd.
+div rs, rt;Divides rs by rt and stores the quotient in $lo and the remainder in $hi.
+divu rs, rt;Divides rs by rt and stores the quotient in $lo and the remainder in $hi.
+jalr rd, rs;Saves the instruction address of the following instruction to the $ra register and then jumps to the address saved in rs.
+jr rs;Jumps to the address saved in rs.
+mfhi rd;Moves word from $hi to rd.
+mflo rd;Moves word from $lo to rd.
+mthi rs;Moves rs to $hi.
+mtlo rs;Moves rs to $lo
+mult rs, rt;Multiplies rs with rt and stores the (possible 64bit) result $lo (first 32bit) and $hi (last 32bit).
+multu rs, rt;Multiplies rs with rt and stores the (possible 64bit) result $lo (first 32bit) and $hi (last 32bit).
+nor rd, rs, rt;Does perform a bitwise nor operation of rs and rt and stores the result in rd.
+or rd, rs, rt;Does perform a bitwise or operation of rs and rt and stores the result in rd.
+sll rd, rt, amount;Shifts the word in rt bitwise to the left by a given amount and stores the result in rd.
+sllv rd, rt, rs;Shifts the word in rt bitwise to the left by the value of rs and stores the result in rd.
+slt rd, rs, rt;Sets rd to 1 if rs is smaller than rt.
+sltu rd, rs, rt;Sets rd to 1 if rs is smaller than rt.
+sra rd, rt, amount;Shifts the word in rt bitwise to the right by a given amount of rs and stores the result in rd.
+srav rd, rt, rs;Shifts the word in rt bitwise to the right by the value of rs and stores the result in rd.
+srl rd, rt, amount;Shifts the word in rt bitwise to the right by a given amount of rs and stores the result in rd.
+srlv rd, rt, rs;Shifts the word in rt bitwise to the right by the value of rs and stores the result in rd.
+sub rd, rs, rt;Subtract rt from rs and store the result in rd.
+subu rd, rs, rt;Subtract rt from rs and store the result in rd.
+xor rd, rs, rt;Does perform a bitwise xor operation on rs and rt and stores the result in rd.
+addi rt, rs, immediate;Adds a constant value to rs and stores the result in rt (with overflow).
+addiu rt, rs, immediate;Adds a constant value to rs and stores the result in rt (no overflow).
+andi rt, rs, immediate;Does a bitwise and operation on rs and a constant value and stores the result in rt.
+beq rs, rt, label;Branches if the values stored in rs and rt are equal. The target is given by the label.
+bgez rs, label;Branches if rs greater or equal zero. The target is given by the label.
+bgtz rs, label;Branches if rs is greater than zero. The target is given by the label.
+blez rs, label;Branches if rs is less or equal than zero. The target is given by the label.
+bltz rs, label;Branches if rs is less than zero. The target is given by the label.
+bne rs, rt, label;Branches if rs and rt are not equal. The target is given by the label.
+lb rt, immediate(rs);Load byte from memory that is stored at the address rs with a given offset.
+lbu rt, immediate(rs);Load byte from memory that is stored at the address rs with a given offset.
+lh rt, immediate(rs);Load halfword from memory that is stored at the address rs with a given offset.
+lhu rt, immediate(rs);Load halfword from memory that is stored at the address rs with a given offset.
+lui rt, immediate;Stores the 16bit immidiate value in the upper region of rt including the MSB.
+lw rt, immediate(rs);Load word from memory that is stored at the address rs with a given offset.
+ori rt, rs, immediate;Does a bitwise or operation on rs and a constant and stores the result in rt.
+sb rt, immediate(rs);Store byte in memory at the address rs with a given offset.
+slti rt, rs, immediate;Set rt to 1 if rs is smaller than a given constant.
+sltiu rt, rs, immediate;Set rt to 1 if rs is smaller than a given constant.
+sh rt, immediate(rs);Store halfword in memory at the address rs with a given offset.
+sw rt, immediate(rs);Store word in memory at the address rs with a given offset.
+xori rt, rs, immediate;Does a bitwise xor on rs and a given constant and stores the result in rt.
+j label;Jumps to a label.
+jal label;Saves the instruction address of the following instruction to the $ra register and then jumps to a label.
