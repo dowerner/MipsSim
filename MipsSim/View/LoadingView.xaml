@@ -1,9 +1,0 @@
-﻿<Window x:Class="MipsSim.View.LoadingView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="LoadingView" Height="104" Width="321" Topmost="True"
-        WindowStyle="None">
-    <Grid>
-        <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="16" Text="Loading Memory File..."/>
-    </Grid>
-</Window>
