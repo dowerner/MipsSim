@@ -1,0 +1,201 @@
+﻿<UserControl x:Class="MipsSim.View.Controls.MemoryViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:controls="clr-namespace:MipsSim.View.Controls"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converter="clr-namespace:MipsSim.View.Converter"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="170"
+             Name="MemoryView">
+    <UserControl.Resources>
+        <converter:DataModeConverter x:Key="DataModeConverter" />
+        <converter:BoolDataModeConverter x:Key="BoolDataModeConverter" />
+    </UserControl.Resources>
+    <TabControl Name="TabControl">
+        <TabItem Header="Byte View">
+            <Grid>
+                <Grid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Command="{Binding SaveMemoryCommand}" Header="Save current memory"/>
+                        <MenuItem Command="{Binding LoadMemoryCommand}" Header="Load memory from file..."/>
+                    </ContextMenu>
+                </Grid.ContextMenu>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="62"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" HorizontalAlignment="Center" Text="Address" />
+                <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="Data" />
+                <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" x:Name="Viewer" VerticalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="62"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ListView Grid.Column="0" ItemsSource="{Binding Indices}"
+                                  Background="LightGray"
+                                  IsEnabled="False"
+                                  HorizontalAlignment="Right">
+                            <ListView.Resources>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="Margin" Value="0"/>
+                                    <Setter Property="Padding" Value="0"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Style>
+                            </ListView.Resources>
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel VerticalAlignment="Top"  Orientation="Vertical">
+                                        <StackPanel.LayoutTransform>
+                                            <ScaleTransform ScaleX="1" ScaleY="-1" />
+                                        </StackPanel.LayoutTransform>
+                                    </StackPanel>
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Index}" 
+                                               Background="{Binding Background}"
+                                               Foreground="{Binding Foreground}"
+                                               Margin="0"
+                                               Padding="0"
+                                               TextAlignment="Right"
+                                               Width="55"
+                                               HorizontalAlignment="Right">
+                                        <TextBlock.LayoutTransform>
+                                            <ScaleTransform ScaleX="1" ScaleY="-1" />
+                                        </TextBlock.LayoutTransform>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <ItemsControl Grid.Column="1" ItemsSource="{Binding MemoryData}"
+                                      HorizontalAlignment="Stretch">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel VerticalAlignment="Top"  Orientation="Vertical">
+                                        <StackPanel.LayoutTransform>
+                                            <ScaleTransform ScaleX="1" ScaleY="-1" />
+                                        </StackPanel.LayoutTransform>
+                                    </StackPanel>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock MouseDown="EditMemoryEntryClick" Margin="0,0,5,0" HorizontalAlignment="Right" TextAlignment="Right">
+                                        <TextBlock.Text>
+                                            <MultiBinding Converter="{StaticResource DataModeConverter}">
+                                                <Binding Path="Data"/>
+                                                <Binding ElementName="MemoryView" Path="DataContext.DisplayMemoryMode"/>
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                        <TextBlock.LayoutTransform>
+                                            <ScaleTransform ScaleX="1" ScaleY="-1" />
+                                        </TextBlock.LayoutTransform>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Word View">
+            <Grid>
+                <Grid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Command="{Binding SaveMemoryCommand}" Header="Save current memory"/>
+                        <MenuItem Command="{Binding LoadMemoryCommand}" Header="Load memory from file..."/>
+                    </ContextMenu>
+                </Grid.ContextMenu>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="62"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" HorizontalAlignment="Center" Text="Address" />
+                <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="Word" />
+                <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="62"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ListView Grid.Column="0" ItemsSource="{Binding WordIndices}"
+                                  Background="LightGray"
+                                  IsEnabled="False"
+                                  HorizontalAlignment="Right">
+                            <ListView.Resources>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="Margin" Value="0"/>
+                                    <Setter Property="Padding" Value="0"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Style>
+                            </ListView.Resources>
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel VerticalAlignment="Top"  Orientation="Vertical">
+                                        <StackPanel.LayoutTransform>
+                                            <ScaleTransform ScaleX="1" ScaleY="-1" />
+                                        </StackPanel.LayoutTransform>
+                                    </StackPanel>
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Index}" 
+                                               Background="{Binding Background}"
+                                               Foreground="{Binding Foreground}"
+                                               Margin="0"
+                                               Padding="0"
+                                               TextAlignment="Right"
+                                               Width="55"
+                                               HorizontalAlignment="Right">
+                                        <TextBlock.LayoutTransform>
+                                            <ScaleTransform ScaleX="1" ScaleY="-1" />
+                                        </TextBlock.LayoutTransform>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <ItemsControl Grid.Column="1" ItemsSource="{Binding WordMemoryData}"
+                                      HorizontalAlignment="Stretch">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel VerticalAlignment="Top"  Orientation="Vertical">
+                                        <StackPanel.LayoutTransform>
+                                            <ScaleTransform ScaleX="1" ScaleY="-1" />
+                                        </StackPanel.LayoutTransform>
+                                    </StackPanel>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock MouseDown="EditWordEntryClick" Margin="0,0,5,0" HorizontalAlignment="Right" TextAlignment="Right">
+                                        <TextBlock.Text>
+                                            <MultiBinding Converter="{StaticResource BoolDataModeConverter}">
+                                                <Binding Path="Data"/>
+                                                <Binding ElementName="MemoryView" Path="DataContext.DisplayMemoryMode"/>
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                        <TextBlock.LayoutTransform>
+                                            <ScaleTransform ScaleX="1" ScaleY="-1" />
+                                        </TextBlock.LayoutTransform>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</UserControl>
