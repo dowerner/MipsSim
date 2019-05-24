@@ -9,11 +9,11 @@ MipsSim is meant as an easy to use tool to write short MIPS 32 programs in the M
 * Executing programs written in the MIPS assembler language
 * Read and edit Registers and Memory at runtime
 * Save/Load Memory content to a file at runtime
-* Save/Load Register content to a file at runtim
+* Save/Load Register content to a file at runtime
 * Configure size of the main memory of the simulated computer
 
 ## User Interface
-The user interface in MipsSim consits of the following components.
+The user interface in MipsSim consists of the following components.
 
 ### Menu Bar
 On the top left of the menu bar the file menu can be found. The file menu allows saving, loading and opening code files. The file menu also allows the user to save the current content of the main memory of the virtual computer to a file as well as the content of the registers. Both of those file types can then be loaded back into the program.
@@ -30,7 +30,7 @@ At the top of each section is a tab which allows the user to switch from a bytew
 By clicking on a cell the user can edit the content of the main memory at any time. The user does not have to write data in the currently selected format (binary, decimal, hex) but can input any of the three formats and the program can recognize them.
 
 ### Register View
-The register view shows the register banks of the CPU. Some registers like PC, HI and LO are seperated from the rest of the registers and cannot be set by using standard code. How ever these registers along with any others can be edited by the user at any time as well as saved or restored by right clicking in the view and using the respective options from within the context menu.
+The register view shows the register banks of the CPU. Some registers like PC, HI and LO are seperated from the rest of the registers and cannot be set by using standard code. However, these registers along with any others can be edited by the user at any time as well as saved or restored by right clicking in the view and using the respective options from within the context menu.
 
 ## Coding in MipsSim
 MipsSim implements all existing commands used in the MIPS RISK instruction set. Currently MipsSim does NOT implement pseudo commands like "move", "gt", etc..
